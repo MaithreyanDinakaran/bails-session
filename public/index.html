@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bails Session — Premium Multi-Sport Turf Facility</title>
+  <meta name="description" content="Book premium turf slots for Cricket, Football and Badminton at Bails Session. State-of-the-art flood-lit courts. Open 6 AM to 3 AM daily. Easy online booking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Bails Session</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"        class="nav-link">Home</a></li>
+        <li><a href="#sports"      class="nav-link">Sports</a></li>
+        <li><a href="#features"    class="nav-link">Features</a></li>
+        <li><a href="#gallery"     class="nav-link">Gallery</a></li>
+        <li><a href="#about"       class="nav-link">About</a></li>
+        <li><a href="#contact"     class="nav-link">Contact</a></li>
+      </ul>
+      <a href="booking.html" class="btn btn-primary nav-cta">Book a Slot</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-orb orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Open 6 AM – 3 AM &nbsp;·&nbsp; All 7 Days
+      </div>
+      <h1 class="hero-title">
+        Play On<br>
+        <span class="gradient-text">Your Terms.</span>
+      </h1>
+      <p class="hero-subtitle">
+        Premium multi-sport turf facility for Cricket, Football &amp; Badminton.<br>
+        Professional-grade turf. Flood-lit courts. Zero compromise.
+      </p>
+      <div class="hero-cta">
+        <a href="booking.html" class="btn btn-primary btn-lg" id="heroCta">
+          <span>Book a Slot</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#sports" class="btn btn-ghost btn-lg">Explore Sports</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Monthly Bookings</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span>
+          <span class="stat-label">Premium Sports</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="21">0</span><span class="stat-suffix">hrs</span>
+          <span class="stat-label">Daily Availability</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Happy Players</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator"><div class="scroll-dot"></div></div>
+  </section>
+
+  <!-- ===== SPORTS ===== -->
+  <section class="section sports-section" id="sports">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Choose Your Sport</span>
+        <h2 class="section-title">Three Sports.<br>One Epic Venue.</h2>
+        <p class="section-subtitle">State-of-the-art facilities for every game you love.</p>
+      </div>
+      <div class="sports-grid">
+
+        <!-- Cricket -->
+        <div class="sport-card reveal" id="sportCricket">
+          <div class="sport-card-bg cricket-bg"></div>
+          <div class="sport-card-content">
+            <div class="sport-icon">🏏</div>
+            <div class="sport-tag">Cricket</div>
+            <h3 class="sport-name">Cricket Turf</h3>
+            <p class="sport-desc">Full-length pitch with premium artificial turf. Perfect for batting practice, friendly matches, and weekend tournaments.</p>
+            <div class="sport-details">
+              <span class="sport-detail">📏 Full-length pitch</span>
+              <span class="sport-detail">👥 Up to 22 players</span>
+              <span class="sport-detail">🔦 Flood-lit courts</span>
+            </div>
+            <div class="sport-price">₹600 <span>/ 3 hrs</span></div>
+            <a href="booking.html?sport=cricket" class="btn btn-sport" id="bookCricketBtn">Book Cricket Slot</a>
+          </div>
+        </div>
+
+        <!-- Football (Featured) -->
+        <div class="sport-card sport-card-featured reveal" id="sportFootball">
+          <div class="featured-badge">Most Popular</div>
+          <div class="sport-card-bg football-bg"></div>
+          <div class="sport-card-content">
+            <div class="sport-icon">⚽</div>
+            <div class="sport-tag">Football</div>
+            <h3 class="sport-name">Football Turf</h3>
+            <p class="sport-desc">FIFA-quality artificial turf designed for high-intensity 5-a-side and 7-a-side football. Fully lined and flood-lit.</p>
+            <div class="sport-details">
+              <span class="sport-detail">📏 5v5 / 7v7 layout</span>
+              <span class="sport-detail">👥 Up to 14 players</span>
+              <span class="sport-detail">🔦 Flood-lit courts</span>
+            </div>
+            <div class="sport-price">₹800 <span>/ 3 hrs</span></div>
+            <a href="booking.html?sport=football" class="btn btn-sport btn-sport-featured" id="bookFootballBtn">Book Football Slot</a>
+          </div>
+        </div>
+
+        <!-- Badminton -->
+        <div class="sport-card reveal" id="sportBadminton">
+          <div class="sport-card-bg badminton-bg"></div>
+          <div class="sport-card-content">
+            <div class="sport-icon">🏸</div>
+            <div class="sport-tag">Badminton</div>
+            <h3 class="sport-name">Badminton Court</h3>
+            <p class="sport-desc">Professional synthetic courts with BWF-standard markings and bright LED overhead lighting for singles and doubles play.</p>
+            <div class="sport-details">
+              <span class="sport-detail">📏 2 full courts</span>
+              <span class="sport-detail">👥 Up to 4 players</span>
+              <span class="sport-detail">💡 LED lighting</span>
+            </div>
+            <div class="sport-price">₹300 <span>/ 3 hrs</span></div>
+            <a href="booking.html?sport=badminton" class="btn btn-sport" id="bookBadmintonBtn">Book Badminton Slot</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section features-section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Why Bails Session</span>
+        <h2 class="section-title">Everything You Need<br>to Play Your Best Game.</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal" id="feat1">
+          <div class="feature-icon">🔦</div>
+          <h3>Flood-Lit Courts</h3>
+          <p>Play anytime with our high-powered LED flood lighting, available from 6 AM to 3 AM every day.</p>
+        </div>
+        <div class="feature-card reveal" id="feat2">
+          <div class="feature-icon">🌿</div>
+          <h3>Premium Artificial Turf</h3>
+          <p>FIFA and BWF-approved surfaces built for performance, safety, and long-lasting durability.</p>
+        </div>
+        <div class="feature-card reveal" id="feat3">
+          <div class="feature-icon">🅿️</div>
+          <h3>Free Parking</h3>
+          <p>Ample free parking space for all players and spectators. No hassle, just game.</p>
+        </div>
+        <div class="feature-card reveal" id="feat4">
+          <div class="feature-icon">🚿</div>
+          <h3>Changing Rooms</h3>
+          <p>Clean and spacious changing rooms with showers for all players after every session.</p>
+        </div>
+        <div class="feature-card reveal" id="feat5">
+          <div class="feature-icon">📶</div>
+          <h3>Free High-Speed WiFi</h3>
+          <p>Complimentary high-speed WiFi throughout the entire premises for players and spectators.</p>
+        </div>
+        <div class="feature-card reveal" id="feat6">
+          <div class="feature-icon">🏏</div>
+          <h3>Equipment on Rent</h3>
+          <p>Bats, balls, shuttles and other equipment available on rent or complimentary loan.</p>
+        </div>
+        <div class="feature-card reveal" id="feat7">
+          <div class="feature-icon">🧃</div>
+          <h3>Refreshment Zone</h3>
+          <p>In-house counter serving juices, energy drinks, and snacks to keep you fuelled.</p>
+        </div>
+        <div class="feature-card reveal" id="feat8">
+          <div class="feature-icon">📅</div>
+          <h3>Instant Online Booking</h3>
+          <p>Reserve your slot in under 2 minutes. No calling, no waiting — just book and play.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="section gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Gallery</span>
+        <h2 class="section-title">See It to Believe It.</h2>
+        <p class="section-subtitle">A glimpse into the Bails Session experience.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item large reveal" id="galleryItem1">
+          <img src="assets/images/gallery1.png" alt="Floodlit football turf at night" loading="lazy">
+          <div class="gallery-overlay"><span>⚽ Football Turf</span></div>
+        </div>
+        <div class="gallery-item reveal" id="galleryItem2">
+          <img src="assets/images/gallery2.png" alt="Premium cricket pitch" loading="lazy">
+          <div class="gallery-overlay"><span>🏏 Cricket Pitch</span></div>
+        </div>
+        <div class="gallery-item reveal" id="galleryItem3">
+          <img src="assets/images/gallery3.png" alt="Indoor badminton court" loading="lazy">
+          <div class="gallery-overlay"><span>🏸 Badminton Court</span></div>
+        </div>
+        <div class="gallery-item reveal" id="galleryItem4">
+          <img src="assets/images/gallery4.png" alt="Aerial view of turf" loading="lazy">
+          <div class="gallery-overlay"><span>🌙 Night View</span></div>
+        </div>
+        <div class="gallery-item large reveal" id="galleryItem5">
+          <img src="assets/images/gallery5.png" alt="Players in action on the turf" loading="lazy">
+          <div class="gallery-overlay"><span>🎮 Game On!</span></div>
+        </div>
+        <div class="gallery-item reveal" id="galleryItem6">
+          <img src="assets/images/gallery6.png" alt="Bails Session facility exterior" loading="lazy">
+          <div class="gallery-overlay"><span>🏟️ The Facility</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text reveal">
+          <span class="section-tag">About Us</span>
+          <h2 class="section-title">Born From a Love<br>of the Game.</h2>
+          <p>At Bails Session, we believe everyone deserves access to world-class sports infrastructure. That's why we built a venue where professionals and beginners come together, compete, and create unforgettable memories.</p>
+          <p>Our facility features premium-grade artificial turf, professional LED flood lighting, and all the amenities you need to focus on one thing — your game.</p>
+          <div class="about-highlights">
+            <div class="highlight-item"><span class="highlight-icon">✅</span> Open 7 days a week, 21 hours a day</div>
+            <div class="highlight-item"><span class="highlight-icon">✅</span> Professionally maintained turf every week</div>
+            <div class="highlight-item"><span class="highlight-icon">✅</span> Tournament-ready facilities</div>
+            <div class="highlight-item"><span class="highlight-icon">✅</span> Friendly staff available on-site always</div>
+          </div>
+          <a href="booking.html" class="btn btn-primary" id="aboutCtaBtn">Book Your Slot Today</a>
+        </div>
+        <div class="about-visual reveal">
+          <div class="about-card-stack">
+            <div class="about-card about-card-1">
+              <div class="about-card-icon">🏆</div>
+              <div>
+                <div class="about-card-title">Top Rated Facility</div>
+                <div class="about-card-sub">⭐⭐⭐⭐⭐ by 200+ players</div>
+              </div>
+            </div>
+            <div class="about-card about-card-2">
+              <div class="about-card-icon">📅</div>
+              <div>
+                <div class="about-card-title">21 Hours / Day</div>
+                <div class="about-card-sub">Always ready when you are</div>
+              </div>
+            </div>
+            <div class="about-card about-card-3">
+              <div class="about-card-icon">⚡</div>
+              <div>
+                <div class="about-card-title">Instant Booking</div>
+                <div class="about-card-sub">Confirmed in under 2 minutes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Testimonials</span>
+        <h2 class="section-title">What Our Players Say.</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal" id="test1">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"Best turf in the city! The football pitch is absolutely world-class. We play here every weekend with our team. Booking is super easy online."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">RA</div>
+            <div><div class="author-name">Rahul Arora</div><div class="author-sport">⚽ Football Player</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" id="test2">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"The cricket turf here is something else. Excellent bounce, great pitch condition. Night sessions feel like a real match atmosphere under those floodlights!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">KP</div>
+            <div><div class="author-name">Karthik Patel</div><div class="author-sport">🏏 Cricket Enthusiast</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal" id="test3">
+          <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">"The badminton courts are top quality. Great lighting, smooth floor, and the staff is super helpful. The Pay Later option is very convenient!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div><div class="author-name">Sneha Menon</div><div class="author-sport">🏸 Badminton Player</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title">Find Us. Reach Us.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div><h4>Location</h4><p>123 Sports Avenue, Green Park,<br>City – 560001</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div><h4>Phone</h4><p>+91 98765 43210</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+             <div><h4>Email</h4><p>hello@bailssession.in</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <div><h4>Hours</h4><p>6:00 AM – 3:00 AM &nbsp;·&nbsp; Daily</p></div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" placeholder="Rahul Sharma" required>
+              </div>
+              <div class="form-group">
+                <label for="contactPhone">Phone</label>
+                <input type="tel" id="contactPhone" placeholder="+91 98765 43210">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="4" placeholder="Ask us anything..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#home" class="nav-logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">Bails Session</span>
+          </a>
+          <p>Premium multi-sport turf facility.<br>Your game. Your time. Your session.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram" id="socialInsta">📷</a>
+            <a href="#" class="social-link" aria-label="Facebook"  id="socialFb">📘</a>
+            <a href="#" class="social-link" aria-label="Twitter"   id="socialTw">🐦</a>
+            <a href="#" class="social-link" aria-label="WhatsApp"  id="socialWa">💬</a>
+        </div>
+        <div class="footer-links-group">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sports">Sports</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Sports</h4>
+          <ul>
+            <li><a href="booking.html?sport=cricket">Cricket</a></li>
+            <li><a href="booking.html?sport=football">Football</a></li>
+            <li><a href="booking.html?sport=badminton">Badminton</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Open Hours</h4>
+          <ul>
+            <li>Mon – Sun</li>
+            <li>6:00 AM – 3:00 AM</li>
+            <li>All 7 days</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Bails Session. All rights reserved.</p>
+        <p>Made with ❤️ for sports lovers.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

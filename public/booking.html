@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Slot — Bails Session</title>
+  <meta name="description" content="Book your turf slot at Bails Session in under 2 minutes. Choose Cricket, Football or Badminton, pick your 3-hour slot, and pay online or at the venue.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="booking-page">
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">Bails Session</span>
+      </a>
+      <a href="index.html" class="btn btn-ghost" id="backHomeBtn">← Back to Home</a>
+    </div>
+  </nav>
+
+  <!-- Booking Section -->
+  <section class="booking-section">
+    <div class="container">
+
+      <div class="booking-header">
+        <h1 class="booking-title">Book Your <span class="gradient-text">Slot</span></h1>
+        <p class="booking-subtitle">Complete the steps below to reserve your turf time.</p>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar-wrap">
+        <div class="progress-steps">
+          <div class="progress-step active" data-step="1">
+            <div class="step-circle">1</div>
+            <span class="step-label">Sport</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="2">
+            <div class="step-circle">2</div>
+            <span class="step-label">Date</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="3">
+            <div class="step-circle">3</div>
+            <span class="step-label">Slot</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="4">
+            <div class="step-circle">4</div>
+            <span class="step-label">Details</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="5">
+            <div class="step-circle">5</div>
+            <span class="step-label">Payment</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step" data-step="6">
+            <div class="step-circle">✓</div>
+            <span class="step-label">Confirm</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== STEP 1: Sport ===== -->
+      <div class="booking-step active" id="step1">
+        <h2 class="step-title">Select Your Sport</h2>
+        <div class="book-sports-grid">
+          <div class="book-sport-card" id="bsCricket" data-sport="cricket" data-price="600">
+            <div class="book-sport-icon">🏏</div>
+            <div class="book-sport-name">Cricket</div>
+            <div class="book-sport-price">₹600 / 3 hrs</div>
+            <div class="book-sport-desc">Full pitch · Up to 22 players</div>
+          </div>
+          <div class="book-sport-card" id="bsFootball" data-sport="football" data-price="800">
+            <div class="book-sport-icon">⚽</div>
+            <div class="book-sport-name">Football</div>
+            <div class="book-sport-price">₹800 / 3 hrs</div>
+            <div class="book-sport-desc">5v5 / 7v7 · Up to 14 players</div>
+          </div>
+          <div class="book-sport-card" id="bsBadminton" data-sport="badminton" data-price="300">
+            <div class="book-sport-icon">🏸</div>
+            <div class="book-sport-name">Badminton</div>
+            <div class="book-sport-price">₹300 / 3 hrs</div>
+            <div class="book-sport-desc">2 courts · Up to 4 players</div>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-primary" id="s1Next" disabled>Next: Pick Date →</button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 2: Date ===== -->
+      <div class="booking-step" id="step2">
+        <h2 class="step-title">Pick a Date</h2>
+        <div class="date-picker-wrap">
+          <label for="bookingDate" class="date-label">Select your preferred date</label>
+          <input type="date" id="bookingDate" class="date-input">
+          <p class="date-hint">You can book up to 7 days in advance.</p>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" id="s2Back">← Back</button>
+          <button class="btn btn-primary" id="s2Next">Next: Choose Slot →</button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 3: Slot ===== -->
+      <div class="booking-step" id="step3">
+        <h2 class="step-title">Choose Time Slot</h2>
+        <div class="slot-legend">
+          <span class="legend-item available">● Available</span>
+          <span class="legend-item booked">● Booked</span>
+          <span class="legend-item selected">● Selected</span>
+        </div>
+        <div class="slots-grid" id="slotsGrid">
+          <div class="slots-loading">
+            <div class="loading-spinner"></div>
+            <span>Loading available slots...</span>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" id="s3Back">← Back</button>
+          <button class="btn btn-primary" id="s3Next" disabled>Next: Your Details →</button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 4: Details ===== -->
+      <div class="booking-step" id="step4">
+        <h2 class="step-title">Your Details</h2>
+        <div class="details-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bookName">Full Name *</label>
+              <input type="text" id="bookName" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="bookPhone">Phone Number *</label>
+              <input type="tel" id="bookPhone" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bookEmail">Email Address *</label>
+            <input type="email" id="bookEmail" placeholder="you@example.com" required>
+          </div>
+          <div class="booking-summary-mini" id="miniSummary"></div>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" id="s4Back">← Back</button>
+          <button class="btn btn-primary" id="s4Next">Next: Payment →</button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 5: Payment ===== -->
+      <div class="booking-step" id="step5">
+        <h2 class="step-title">Choose Payment Method</h2>
+
+        <div class="payment-options">
+          <div class="payment-card" id="payNow">
+            <div class="payment-icon">💳</div>
+            <div class="payment-info">
+              <h3>Pay Now</h3>
+              <p>Pay via UPI or card. Instant and fully confirmed booking.</p>
+            </div>
+            <div class="payment-badge">Recommended</div>
+          </div>
+          <div class="payment-card" id="payLater">
+            <div class="payment-icon">🏟️</div>
+            <div class="payment-info">
+              <h3>Pay Later</h3>
+              <p>Reserve your slot now and pay at the venue before your session starts.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pay Now Form -->
+        <div class="pay-now-form" id="payNowForm">
+          <div class="pay-tabs">
+            <button class="pay-tab active" data-tab="upi" id="tabUpi">UPI</button>
+            <button class="pay-tab" data-tab="card" id="tabCard">Credit / Debit Card</button>
+          </div>
+          <div class="pay-tab-content active" id="upiTab">
+            <div class="form-group">
+              <label for="upiId">UPI ID</label>
+              <input type="text" id="upiId" placeholder="yourname@upi">
+            </div>
+            <p class="pay-note">💡 A payment request will be sent to your UPI ID after booking confirmation.</p>
+          </div>
+          <div class="pay-tab-content" id="cardTab">
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cardExpiry">Expiry</label>
+                <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+              </div>
+              <div class="form-group">
+                <label for="cardCvv">CVV</label>
+                <input type="password" id="cardCvv" placeholder="•••" maxlength="3">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cardName">Name on Card</label>
+              <input type="text" id="cardName" placeholder="Your full name">
+            </div>
+          </div>
+        </div>
+
+        <!-- Pay Later Info -->
+        <div class="pay-later-info" id="payLaterInfo">
+          <div class="info-box">
+            <span>🏟️</span>
+            <div>
+              <strong>Pay at Venue</strong>
+              <p>Your slot will be reserved immediately. Please arrive 10 minutes before your session and complete payment at the reception counter.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-nav">
+          <button class="btn btn-ghost" id="s5Back">← Back</button>
+          <button class="btn btn-primary" id="s5Next" disabled>Confirm Booking →</button>
+        </div>
+      </div>
+
+      <!-- ===== STEP 6: Confirmation ===== -->
+      <div class="booking-step" id="step6">
+        <div class="confirmation-wrap" id="confirmationWrap">
+          <!-- Injected by booking.js -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer footer-slim">
+    <div class="container">
+      <p>© 2026 Bails Session. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/booking.js"></script>
+</body>
+</html>
