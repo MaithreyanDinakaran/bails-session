@@ -3,6 +3,29 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 
+// ── Twilio SMS (optional — set env vars to enable) ──
+let twilioClient = null;
+if (process.env.TWILIO_ACCOUNT_SID && process.env.TWILIO_AUTH_TOKEN) {
+    try {
+        const twilio = require('twilio');
+        twilioClient = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+        console.log('✅ Twilio SMS enabled');
+    } catch { console.warn('⚠️ Twilio not installed. Run: npm install twilio'); }
+}
+
+async function sendSMS(phone, message) {
+    if (!twilioClient || !process.env.TWILIO_PHONE) return;
+    try {
+        const toNumber = phone.startsWith('+') ? phone : `+91${phone.replace(/\D/g,'')}`;
+        await twilioClient.messages.create({
+            body: message,
+            from: process.env.TWILIO_PHONE,
+            to: toNumber
+        });
+        console.log(`📱 SMS sent to ${toNumber}`);
+    } catch (err) { console.error('SMS error:', err.message); }
+}
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const BOOKINGS_FILE = path.join(__dirname, 'data', 'bookings.json');
@@ -98,6 +121,10 @@ app.post('/api/bookings', (req, res) => {
     bookings.push(booking);
     writeBookings(bookings);
 
+    // ── Send SMS confirmation ──
+    const smsBody = `✅ Booking Confirmed! 🏟️ Bails Session\n\nHi ${name},\n📋 ID: ${bookingId}\n🏅 Sport: ${sport}\n📅 Date: ${date}\n⏰ Slot: ${slotTime}\n💰 Amount: ₹${price}\n💳 Payment: ${payment === 'pay_later' ? 'Pay at venue' : 'Online'}\n\nSee you on the turf! 🎉`;
+    sendSMS(phone, smsBody);
+
     res.status(201).json({ success: true, booking });
 });
 
@@ -119,6 +146,11 @@ app.patch('/api/bookings/:id/confirm', (req, res) => {
     bookings[idx].payment = 'cash';
     bookings[idx].confirmedAt = new Date().toISOString();
     writeBookings(bookings);
+
+    // ── Send cash confirmed SMS ──
+    const b = bookings[idx];
+    const smsCash = `✅ Payment Confirmed! 🏟️ Bails Session\n\nHi ${b.name},\nYour cash payment of ₹${b.price} has been received.\n📋 ID: ${b.id} | 🏅 ${b.sport} | 📅 ${b.date} | ⏰ ${b.slotTime}\n\nEnjoy your session! 🎉`;
+    sendSMS(b.phone, smsCash);
 
     res.json({ success: true, booking: bookings[idx] });
 });
