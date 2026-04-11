@@ -758,7 +758,12 @@ h1, h2, h3, h4 {
 .about-card-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
 .about-card-sub { font-size: 0.82rem; color: var(--text-muted); }
 
-/* ===== Testimonials ===== */
+/* ===== Testimonials (inside Home section) ===== */
+.home-testimonials {
+  background: var(--bg-secondary);
+  padding: 90px 0 100px;
+  margin-top: 0;
+}
 .testimonials-section { background: var(--bg-secondary); }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .testimonial-card {
