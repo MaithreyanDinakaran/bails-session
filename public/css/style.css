@@ -911,6 +911,73 @@ section[id] {
 }
 .btn-wa svg { flex-shrink: 0; }
 
+/* =====================================================
+   Section Background Images + Overlays
+   ===================================================== */
+
+/* HOME section — cricket/football turf at night */
+#home {
+  background:
+    linear-gradient(135deg, rgba(4,5,15,0.80) 0%, rgba(7,9,24,0.65) 60%, rgba(4,5,15,0.80) 100%),
+    url('https://images.unsplash.com/photo-1540747913346-19212a4b8fb5?w=1920&q=80') center/cover no-repeat;
+}
+
+/* HOME testimonials strip */
+.home-testimonials {
+  background:
+    linear-gradient(rgba(7,9,24,0.88), rgba(7,9,24,0.88)),
+    url('https://images.unsplash.com/photo-1565728744382-61accd4aa148?w=1920&q=80') center/cover no-repeat !important;
+}
+
+/* SPORTS section — green football turf */
+#sports {
+  background:
+    linear-gradient(rgba(4,5,15,0.78), rgba(4,5,15,0.78)),
+    url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1920&q=80') center/cover no-repeat;
+  position: relative;
+}
+
+/* FEATURES section — stadium floodlights */
+#features {
+  background:
+    linear-gradient(rgba(4,5,15,0.82), rgba(4,5,15,0.82)),
+    url('https://images.unsplash.com/photo-1459865264687-595d652de67e?w=1920&q=80') center/cover no-repeat;
+}
+
+/* GALLERY section — sports action */
+#gallery {
+  background:
+    linear-gradient(rgba(4,5,15,0.80), rgba(4,5,15,0.80)),
+    url('https://images.unsplash.com/photo-1556056504-5c7696c4c28d?w=1920&q=80') center/cover no-repeat;
+}
+
+/* ABOUT section — turf aerial view */
+#about {
+  background:
+    linear-gradient(135deg, rgba(4,5,15,0.82) 0%, rgba(13,15,36,0.75) 50%, rgba(4,5,15,0.82) 100%),
+    url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1920&q=80') center/cover no-repeat;
+}
+
+/* CONTACT section — stadium night glow */
+#contact {
+  background:
+    linear-gradient(rgba(4,5,15,0.85), rgba(4,5,15,0.85)),
+    url('https://images.unsplash.com/photo-1478029031199-98b78de9ed7c?w=1920&q=80') center/cover no-repeat;
+}
+
+/* Ensure all section containers sit above the background */
+#home > *,
+#sports > *,
+#features > *,
+#gallery > *,
+#about > *,
+#contact > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
 /* ===== Footer =====
  */
 
