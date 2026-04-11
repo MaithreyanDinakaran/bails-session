@@ -202,6 +202,26 @@
     }
     @keyframes spin{to{transform:rotate(360deg)}}
 
+    /* Confirm button */
+    .confirm-btn{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:6px 14px;background:rgba(0,201,122,0.12);
+      border:1px solid rgba(0,201,122,0.3);
+      border-radius:8px;color:#00c97a;
+      font-size:0.76rem;font-weight:700;
+      cursor:pointer;font-family:'DM Sans',sans-serif;
+      transition:all 0.25s;white-space:nowrap;
+    }
+    .confirm-btn:hover{
+      background:rgba(0,201,122,0.22);
+      border-color:#00c97a;
+      box-shadow:0 0 12px rgba(0,201,122,0.2);
+      transform:translateY(-1px);
+    }
+    .confirm-btn:disabled{
+      opacity:0.5;cursor:not-allowed;transform:none;
+    }
+
     /* Responsive */
     @media(max-width:900px){
       .stats-row{grid-template-columns:1fr 1fr}
@@ -304,15 +324,14 @@
             <th>Date</th>
             <th>Slot</th>
             <th>Phone</th>
-            <th>Email</th>
             <th>Payment</th>
             <th>Amount</th>
             <th>Status</th>
-            <th>Booked At</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody id="bookingsBody">
-          <tr><td colspan="11" class="loading-row"><span class="spinner"></span></td></tr>
+          <tr><td colspan="10" class="loading-row"><span class="spinner"></span></td></tr>
         </tbody>
       </table>
     </div>
@@ -418,21 +437,22 @@
     const sportIcon = { cricket:'🏏', football:'⚽', badminton:'🏸' };
 
     document.getElementById('bookingsBody').innerHTML = filtered.map(b => {
-      const date = new Date(b.createdAt).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'});
-      const payLabel = b.payment === 'pay_now' ? '💳 Online' : '🕐 Pay Later';
+      const payLabel = b.payment === 'cash' ? '💵 Cash' : b.payment === 'pay_now' ? '💳 Online' : '🕐 Pay Later';
+      const actionCell = b.status === 'pending_payment'
+        ? `<button class="confirm-btn" onclick="confirmCash('${b.id}', this)">✅ Confirm Cash</button>`
+        : `<span style="color:var(--dim);font-size:0.78rem">—</span>`;
       return `
-        <tr>
+        <tr id="row-${b.id}">
           <td><span class="booking-id">${b.id}</span></td>
           <td><strong>${escHtml(b.name)}</strong></td>
           <td><span class="sport-pill ${b.sport.toLowerCase()}">${sportIcon[b.sport.toLowerCase()] || ''} ${cap(b.sport)}</span></td>
           <td>${b.date}</td>
           <td style="white-space:nowrap;font-size:0.82rem;color:var(--muted)">${escHtml(b.slotTime)}</td>
           <td>${escHtml(b.phone)}</td>
-          <td style="font-size:0.81rem;color:var(--muted)">${escHtml(b.email)}</td>
           <td style="font-size:0.82rem">${payLabel}</td>
           <td style="color:var(--gold);font-weight:700">₹${(b.price||0).toLocaleString('en-IN')}</td>
-          <td><span class="status-pill ${b.status}">${b.status === 'confirmed' ? '✅ Confirmed' : '⏳ Pending'}</span></td>
-          <td style="font-size:0.78rem;color:var(--dim);white-space:nowrap">${date}</td>
+          <td id="status-${b.id}"><span class="status-pill ${b.status}">${b.status === 'confirmed' ? '✅ Confirmed' : '⏳ Pending'}</span></td>
+          <td id="action-${b.id}">${actionCell}</td>
         </tr>`;
     }).join('');
   }
@@ -441,6 +461,33 @@
     return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
   function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+  // ── Confirm Cash Payment ──
+  async function confirmCash(id, btn) {
+    if (!confirm(`Confirm cash payment for booking ${id}?`)) return;
+    btn.disabled = true;
+    btn.textContent = 'Confirming…';
+    try {
+      const res = await fetch(`/api/bookings/${id}/confirm?secret=${SECRET}`, { method: 'PATCH' });
+      if (!res.ok) throw new Error('Failed');
+      // Update in local data
+      const idx = allBookings.findIndex(b => b.id === id);
+      if (idx !== -1) {
+        allBookings[idx].status  = 'confirmed';
+        allBookings[idx].payment = 'cash';
+      }
+      // Update row in-place without full reload
+      document.getElementById(`status-${id}`).innerHTML =
+        '<span class="status-pill confirmed">✅ Confirmed</span>';
+      document.getElementById(`action-${id}`).innerHTML =
+        '<span style="color:var(--dim);font-size:0.78rem">—</span>';
+      updateStats();
+    } catch {
+      btn.disabled = false;
+      btn.textContent = '✅ Confirm Cash';
+      alert('Failed to confirm. Please try again.');
+    }
+  }
 </script>
 
 </body>

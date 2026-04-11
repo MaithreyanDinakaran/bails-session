@@ -107,6 +107,22 @@ app.get('/api/bookings', (req, res) => {
     res.json(readBookings());
 });
 
+// PATCH /api/bookings/:id/confirm?secret=admin123
+app.patch('/api/bookings/:id/confirm', (req, res) => {
+    if (req.query.secret !== 'admin123') return res.status(403).json({ error: 'Forbidden' });
+
+    const bookings = readBookings();
+    const idx = bookings.findIndex(b => b.id === req.params.id);
+    if (idx === -1) return res.status(404).json({ error: 'Booking not found' });
+
+    bookings[idx].status = 'confirmed';
+    bookings[idx].payment = 'cash';
+    bookings[idx].confirmedAt = new Date().toISOString();
+    writeBookings(bookings);
+
+    res.json({ success: true, booking: bookings[idx] });
+});
+
 app.listen(PORT, () => {
     console.log(`\n🏏  Bails Session server running at http://localhost:${PORT}\n`);
 });
