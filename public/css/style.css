@@ -1,56 +1,61 @@
 /* ================================================
-   Bails Session — Premium Stylesheet v2
-   Luxury Dark Theme | Playfair + DM Sans
+   Bails Session — Modern v3
+   Deep Navy · Electric Cyan · Violet
    ================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Backgrounds */
-  --bg-primary:    #080810;
-  --bg-secondary:  #0c0c18;
-  --bg-card:       #111124;
-  --bg-card-hover: #161630;
+  /* ── Backgrounds ── */
+  --bg-primary:    #04050f;
+  --bg-secondary:  #070918;
+  --bg-card:       #0d0f24;
+  --bg-card-hover: #111430;
 
-  /* Gold Accent Palette */
-  --gold:          #c9a84c;
-  --gold-light:    #e8c97a;
-  --gold-dim:      rgba(201, 168, 76, 0.12);
-  --gold-glow:     0 0 28px rgba(201, 168, 76, 0.28);
-  --gold-glow-lg:  0 0 55px rgba(201, 168, 76, 0.40);
-  --gradient-gold: linear-gradient(135deg, #c9a84c 0%, #f0d882 50%, #c9a84c 100%);
-  --gradient-gold-text: linear-gradient(135deg, #e8c97a, #c9a84c, #f5e0a0);
+  /* ── Primary Accent — Electric Cyan ── */
+  --gold:          #00d4ff;
+  --gold-light:    #7ef0ff;
+  --gold-dim:      rgba(0, 212, 255, 0.10);
+  --gold-glow:     0 0 28px rgba(0, 212, 255, 0.30);
+  --gold-glow-lg:  0 0 60px rgba(0, 212, 255, 0.40);
 
-  /* Accent */
-  --accent-teal:   #00c4b4;
-  --accent-purple: #7c4fe0;
+  /* ── Gradients ── */
+  --gradient-gold:      linear-gradient(135deg, #00d4ff 0%, #a78bff 50%, #00d4ff 100%);
+  --gradient-gold-text: linear-gradient(135deg, #00d4ff, #a78bff, #7ef0ff);
+  --gradient-hero:      linear-gradient(135deg, #00d4ff 0%, #7c3aed 60%, #ec4899 100%);
+  --gradient-card:      linear-gradient(135deg, rgba(0,212,255,0.08), rgba(124,58,237,0.08));
 
-  /* Text */
-  --text-primary:  #f0ede6;
-  --text-secondary:#a09898;
-  --text-muted:    #4a4a60;
+  /* ── Secondary Accents ── */
+  --accent-violet: #7c3aed;
+  --accent-pink:   #ec4899;
+  --accent-teal:   #06b6d4;
 
-  /* Borders / Glass */
-  --border:        rgba(201, 168, 76, 0.10);
+  /* ── Text ── */
+  --text-primary:  #eef2ff;
+  --text-secondary:#94a3b8;
+  --text-muted:    #3d4468;
+
+  /* ── Borders / Glass ── */
+  --border:        rgba(0, 212, 255, 0.12);
   --border-subtle: rgba(255, 255, 255, 0.06);
   --glass-bg:      rgba(255, 255, 255, 0.025);
   --glass-border:  rgba(255, 255, 255, 0.08);
 
-  /* Shadow */
-  --shadow-card:   0 16px 60px rgba(0, 0, 0, 0.65);
-  --shadow-gold:   0 8px 40px rgba(201, 168, 76, 0.18);
+  /* ── Shadows ── */
+  --shadow-card:   0 16px 64px rgba(0, 0, 0, 0.70);
+  --shadow-gold:   0 8px 40px rgba(0, 212, 255, 0.20);
 
-  /* Radii */
+  /* ── Radii ── */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-xl: 36px;
 
-  /* Transitions */
+  /* ── Transitions ── */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
   --transition: all 0.35s var(--ease);
 
-  /* Spacing */
+  /* ── Spacing ── */
   --section-py: 110px;
 }
 
@@ -75,7 +80,7 @@ input[type="date"] { color-scheme: dark; }
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg-secondary); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#00d4ff, #7c3aed); border-radius: 10px; }
 
 /* ===== Layout ===== */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
@@ -157,10 +162,10 @@ h1, h2, h3, h4 {
 }
 .btn:hover::after { background: rgba(255,255,255,0.06); }
 
-/* Primary = Gold */
+/* Primary = Cyan-Violet */
 .btn-primary {
   background: var(--gradient-gold);
-  color: #0c0a04;
+  color: #04050f;
   box-shadow: var(--gold-glow);
   font-weight: 700;
 }
@@ -206,14 +211,14 @@ h1, h2, h3, h4 {
 }
 .btn-sport-featured {
   background: var(--gradient-gold);
-  border: none; color: #0c0a04;
+  border: none; color: #04050f;
   box-shadow: var(--gold-glow);
   font-weight: 700;
 }
 .btn-sport-featured:hover {
   transform: translateY(-2px);
   box-shadow: var(--gold-glow-lg);
-  color: #0c0a04;
+  color: #04050f;
 }
 
 /* ===== Navbar ===== */
@@ -223,7 +228,7 @@ h1, h2, h3, h4 {
   transition: var(--transition);
 }
 .navbar.scrolled {
-  background: rgba(8, 8, 16, 0.88);
+  background: rgba(4, 5, 15, 0.92);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   border-bottom: 1px solid var(--border);
@@ -233,7 +238,7 @@ h1, h2, h3, h4 {
 .nav-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .logo-icon {
   font-size: 1.4rem;
-  filter: drop-shadow(0 0 12px rgba(201, 168, 76, 0.8));
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.8));
 }
 .logo-text {
   font-family: 'Playfair Display', serif;
@@ -288,17 +293,17 @@ h1, h2, h3, h4 {
 }
 .orb-1 {
   width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0,212,255,0.10) 0%, transparent 70%);
   top: -200px; right: -180px; animation-delay: 0s;
 }
 .orb-2 {
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(124,79,224,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(124,58,237,0.10) 0%, transparent 70%);
   bottom: -200px; left: -120px; animation-delay: -4s;
 }
 .orb-3 {
   width: 320px; height: 320px;
-  background: radial-gradient(circle, rgba(0,196,180,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(236,72,153,0.07) 0%, transparent 70%);
   top: 40%; left: 35%; animation-delay: -7s;
 }
 @keyframes orbFloat {
@@ -309,8 +314,8 @@ h1, h2, h3, h4 {
 .hero-grid {
   position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(201,168,76,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,0.025) 1px, transparent 1px);
+    linear-gradient(rgba(0,212,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.03) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 75% 75% at center, black 10%, transparent 80%);
 }
@@ -319,8 +324,8 @@ h1, h2, h3, h4 {
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 10px;
-  background: rgba(201,168,76,0.07);
-  border: 1px solid rgba(201,168,76,0.20);
+  background: rgba(0,212,255,0.07);
+  border: 1px solid rgba(0,212,255,0.20);
   color: var(--gold);
   padding: 9px 20px; border-radius: 100px;
   font-size: 0.80rem; font-weight: 600;
