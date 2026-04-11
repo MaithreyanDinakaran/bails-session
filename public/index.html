@@ -105,70 +105,136 @@
         <div class="gold-divider" style="margin:12px auto 18px"></div>
         <p class="section-subtitle">State-of-the-art facilities for every game you love.</p>
       </div>
-      <div class="sports-grid">
 
-        <!-- Cricket -->
-        <div class="sport-card reveal" id="sportCricket">
-          <div class="sport-card-bg cricket-bg"></div>
-          <div class="sport-card-content">
-            <div class="sport-icon">🏏</div>
-            <div class="sport-tag">Cricket</div>
-            <h3 class="sport-name">Cricket Turf</h3>
-            <p class="sport-desc">Full-length pitch with premium artificial turf. Perfect for batting practice, friendly
-              matches, and weekend tournaments.</p>
-            <div class="sport-details">
-              <span class="sport-detail">📏 Full-length pitch</span>
-              <span class="sport-detail">👥 Up to 22 players</span>
-              <span class="sport-detail">🔦 Flood-lit courts</span>
+      <!-- Sport Tabs -->
+      <div class="sport-tabs reveal">
+        <button class="sport-tab active" data-sport="cricket" id="tabCricket">
+          <span class="tab-icon">🏏</span>
+          <span class="tab-label">Cricket</span>
+        </button>
+        <button class="sport-tab" data-sport="football" id="tabFootball">
+          <span class="tab-icon">⚽</span>
+          <span class="tab-label">Football</span>
+          <span class="tab-badge">Popular</span>
+        </button>
+        <button class="sport-tab" data-sport="badminton" id="tabBadminton">
+          <span class="tab-icon">🏸</span>
+          <span class="tab-label">Badminton</span>
+        </button>
+      </div>
+
+      <!-- Sport Panels -->
+      <div class="sport-panels">
+
+        <!-- Cricket Panel -->
+        <div class="sport-panel active" id="panelCricket">
+          <div class="sport-panel-bg cricket-bg"></div>
+          <div class="sport-panel-content">
+            <div class="sport-panel-left">
+              <div class="panel-emoji">🏏</div>
+              <div class="panel-tag">Cricket</div>
+              <h3 class="panel-title">Cricket Turf</h3>
+              <p class="panel-desc">Full-length pitch with premium artificial turf. Perfect for batting practice, friendly matches, and weekend tournaments. Experience the thrill of the game in a professional setting.</p>
+              <div class="panel-features">
+                <div class="panel-feat"><span class="pfeat-icon">📏</span><div><strong>Full-Length Pitch</strong><span>Standard professional size</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">👥</span><div><strong>Up to 22 Players</strong><span>Full team matches supported</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">🔦</span><div><strong>Flood-Lit Courts</strong><span>Night sessions available</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">🌿</span><div><strong>Premium Turf</strong><span>FIFA-grade artificial grass</span></div></div>
+              </div>
             </div>
-            <div class="sport-price">₹600 <span>/ 3 hrs</span></div>
-            <a href="booking.html?sport=cricket" class="btn btn-sport" id="bookCricketBtn">Book Cricket Slot</a>
+            <div class="sport-panel-right">
+              <div class="panel-price-card">
+                <div class="ppc-label">Per Session</div>
+                <div class="ppc-price">₹600</div>
+                <div class="ppc-duration">3 hours · Includes all amenities</div>
+                <div class="ppc-divider"></div>
+                <div class="ppc-slots">
+                  <span>🕐</span> 7 daily time slots available
+                </div>
+                <a href="booking.html?sport=cricket" class="btn btn-primary btn-full" id="bookCricketBtn">
+                  Book Cricket Slot
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <p class="ppc-note">Instant confirmation · Pay now or later</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Football (Featured) -->
-        <div class="sport-card sport-card-featured reveal" id="sportFootball">
-          <div class="featured-badge">Most Popular</div>
-          <div class="sport-card-bg football-bg"></div>
-          <div class="sport-card-content">
-            <div class="sport-icon">⚽</div>
-            <div class="sport-tag">Football</div>
-            <h3 class="sport-name">Football Turf</h3>
-            <p class="sport-desc">FIFA-quality artificial turf designed for high-intensity 5-a-side and 7-a-side
-              football. Fully lined and flood-lit.</p>
-            <div class="sport-details">
-              <span class="sport-detail">📏 5v5 / 7v7 layout</span>
-              <span class="sport-detail">👥 Up to 14 players</span>
-              <span class="sport-detail">🔦 Flood-lit courts</span>
+        <!-- Football Panel -->
+        <div class="sport-panel" id="panelFootball">
+          <div class="sport-panel-bg football-bg"></div>
+          <div class="sport-panel-content">
+            <div class="sport-panel-left">
+              <div class="panel-emoji">⚽</div>
+              <div class="panel-tag" style="display:flex;align-items:center;gap:8px;">Football <span class="featured-badge" style="position:relative;top:0;right:0;font-size:0.65rem">Most Popular</span></div>
+              <h3 class="panel-title">Football Turf</h3>
+              <p class="panel-desc">FIFA-quality artificial turf designed for high-intensity 5-a-side and 7-a-side football. Fully lined with professional markings, flood-lit for night sessions.</p>
+              <div class="panel-features">
+                <div class="panel-feat"><span class="pfeat-icon">📏</span><div><strong>5v5 / 7v7 Layout</strong><span>Professional pitch markings</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">👥</span><div><strong>Up to 14 Players</strong><span>Ideal for team matches</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">🔦</span><div><strong>Flood-Lit Courts</strong><span>High-power LED floodlights</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">🥅</span><div><strong>Full Goals</strong><span>Professional goal posts included</span></div></div>
+              </div>
             </div>
-            <div class="sport-price">₹800 <span>/ 3 hrs</span></div>
-            <a href="booking.html?sport=football" class="btn btn-sport btn-sport-featured" id="bookFootballBtn">Book
-              Football Slot</a>
+            <div class="sport-panel-right">
+              <div class="panel-price-card">
+                <div class="ppc-label">Per Session</div>
+                <div class="ppc-price">₹800</div>
+                <div class="ppc-duration">3 hours · Includes all amenities</div>
+                <div class="ppc-divider"></div>
+                <div class="ppc-slots">
+                  <span>🕐</span> 7 daily time slots available
+                </div>
+                <a href="booking.html?sport=football" class="btn btn-primary btn-full" id="bookFootballBtn">
+                  Book Football Slot
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <p class="ppc-note">Instant confirmation · Pay now or later</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Badminton -->
-        <div class="sport-card reveal" id="sportBadminton">
-          <div class="sport-card-bg badminton-bg"></div>
-          <div class="sport-card-content">
-            <div class="sport-icon">🏸</div>
-            <div class="sport-tag">Badminton</div>
-            <h3 class="sport-name">Badminton Court</h3>
-            <p class="sport-desc">Professional synthetic courts with BWF-standard markings and bright LED overhead
-              lighting for singles and doubles play.</p>
-            <div class="sport-details">
-              <span class="sport-detail">📏 2 full courts</span>
-              <span class="sport-detail">👥 Up to 4 players</span>
-              <span class="sport-detail">💡 LED lighting</span>
+        <!-- Badminton Panel -->
+        <div class="sport-panel" id="panelBadminton">
+          <div class="sport-panel-bg badminton-bg"></div>
+          <div class="sport-panel-content">
+            <div class="sport-panel-left">
+              <div class="panel-emoji">🏸</div>
+              <div class="panel-tag">Badminton</div>
+              <h3 class="panel-title">Badminton Court</h3>
+              <p class="panel-desc">Professional synthetic courts with BWF-standard markings and bright LED overhead lighting. Ideal for singles, doubles, and coaching sessions in a world-class environment.</p>
+              <div class="panel-features">
+                <div class="panel-feat"><span class="pfeat-icon">📏</span><div><strong>2 Full Courts</strong><span>BWF standard dimensions</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">👥</span><div><strong>Up to 4 Players</strong><span>Singles or doubles</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">💡</span><div><strong>LED Lighting</strong><span>Perfectly lit for precision play</span></div></div>
+                <div class="panel-feat"><span class="pfeat-icon">🏸</span><div><strong>Equipment on Rent</strong><span>Rackets & shuttles available</span></div></div>
+              </div>
             </div>
-            <div class="sport-price">₹300 <span>/ 3 hrs</span></div>
-            <a href="booking.html?sport=badminton" class="btn btn-sport" id="bookBadmintonBtn">Book Badminton Slot</a>
+            <div class="sport-panel-right">
+              <div class="panel-price-card">
+                <div class="ppc-label">Per Session</div>
+                <div class="ppc-price">₹300</div>
+                <div class="ppc-duration">3 hours · Includes all amenities</div>
+                <div class="ppc-divider"></div>
+                <div class="ppc-slots">
+                  <span>🕐</span> 7 daily time slots available
+                </div>
+                <a href="booking.html?sport=badminton" class="btn btn-primary btn-full" id="bookBadmintonBtn">
+                  Book Badminton Slot
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <p class="ppc-note">Instant confirmation · Pay now or later</p>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
 
   <!-- ===== FEATURES ===== -->
   <section class="section features-section" id="features">

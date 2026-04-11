@@ -94,3 +94,20 @@ function showToast(msg, duration = 4000) {
         setTimeout(() => toast.remove(), 350);
     }, duration);
 }
+
+// ======== Sport Tabs ========
+const sportTabs = document.querySelectorAll('.sport-tab');
+const sportPanels = document.querySelectorAll('.sport-panel');
+
+sportTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const sport = tab.getAttribute('data-sport');
+        sportTabs.forEach(t => t.classList.remove('active'));
+        sportPanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const panel = document.getElementById('panel' + sport.charAt(0).toUpperCase() + sport.slice(1));
+        if (panel) panel.classList.add('active');
+    });
+});
+
+
